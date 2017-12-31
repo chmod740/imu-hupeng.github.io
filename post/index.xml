@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on hupeng&#39;s personal page</title>
-    <link>https://hupeng.me/post/</link>
+    <link>http://hupeng.me/post/</link>
     <description>Recent content in Posts on hupeng&#39;s personal page</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
     <lastBuildDate>Thu, 18 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://hupeng.me/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://hupeng.me/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tensorflow应用之简单验证码识别</title>
-      <link>https://hupeng.me/post/tensorflow%E5%BA%94%E7%94%A8%E4%B9%8B%E7%AE%80%E5%8D%95%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB/</link>
+      <link>http://hupeng.me/post/tensorflow%E5%BA%94%E7%94%A8%E4%B9%8B%E7%AE%80%E5%8D%95%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB/</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://hupeng.me/post/tensorflow%E5%BA%94%E7%94%A8%E4%B9%8B%E7%AE%80%E5%8D%95%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB/</guid>
+      <guid>http://hupeng.me/post/tensorflow%E5%BA%94%E7%94%A8%E4%B9%8B%E7%AE%80%E5%8D%95%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB/</guid>
       <description>1.Tensorflow的安装方式: 这个项目中 采用了tensorflow 1.1版本 安装方式 pip install tensorflow==1.1.0rc2
 2.训练集训练集以及测试及如下(纯手工打造,所以数量不多): 3.实现代码部分(参考了网上的一些实现来完成的) main.py(主要的神经网络代码) from gen_check_code import gen_captcha_text_and_image_new,gen_captcha_text_and_image from gen_check_code import number from test_check_code import get_test_captcha_text_and_image import numpy as np import tensorflow as tf text, image = gen_captcha_text_and_image_new() print(&amp;quot;验证码图像channel:&amp;quot;, image.shape) # (60, 160, 3) # 图像大小 IMAGE_HEIGHT = image.shape[0] IMAGE_WIDTH = image.shape[1] image_shape = image.shape MAX_CAPTCHA = len(text) print(&amp;quot;验证码文本最长字符数&amp;quot;, MAX_CAPTCHA) # 验证码最长4字符; 我全部固定为4,可以不固定. 如果验证码长度小于4，用&#39;_&#39;补齐 # 把彩色图像转为灰度图像（色彩对识别验证码没有什么用） # 度化是将三分量转化成一样数值的过程 def convert2gray(img): if len(img.shape) &amp;gt; 2: gray = np.</description>
     </item>
     
     <item>
       <title>Android与JavaWeb服务器交互教程（1）-搭建环境</title>
-      <link>https://hupeng.me/post/android-javaweb1/</link>
+      <link>http://hupeng.me/post/android-javaweb1/</link>
       <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://hupeng.me/post/android-javaweb1/</guid>
+      <guid>http://hupeng.me/post/android-javaweb1/</guid>
       <description>1.前言 趁着五一放假，闲来无事做，寻思着写篇教程吧。 *本系列教程只适合有一定 单机版Android开发基础的同学，大牛请忽略此教程。  如果我们需要搭建一个具有服务器支撑的Android应用，我们可选的方案有很多。 根据我的经验（当然也不一定准确。。。）对于初学者而言，我个人比较推荐使用Bmob后端云（为了避免打广告的嫌疑，就不贴出地址了，百度一下就有一大把），只要配置好它的SDK，后端的逻辑他都帮你实现的差不多了（PS:短信服务，支付服务等功能都有集成，我只不过某些服务需要收费。。。），我们只需要在Android端编写代码就OK了，通过这种方式我们就能比较轻松的完成一个有服务器支撑应用。 上面的跟本系列教程的关系不大，就是我瞎比比而已。貌似废话有点多。 
 2.开发环境相关 下面的才是本系列教程的真正内容。。。默认大家都已经安装好JDK了 2.1 采用的开发环境：Idea2017（我写这篇教程的时候最新的开发环境就是它了。。。以前一直用MyEclipse，用过Idea之后后来果断弃坑，投入Idea的怀抱，对于我们苦逼的学生狗来说，Idea可以进行学生认证，传送门） 2.2 Android开发环境相关：你的机器上需要安装好Android SDK。。。 什么。。。。你说没有安装过这个玩意？？？给你一个传送门根据你的机器的平台选择安装的版本，windows下推荐下载zip包（个人观点，出了这篇教程我就不认这句话了）。然后后续的步骤等待你自己探索了~~~ 2.3 服务器环境 进行JavaWeb开发怎么能没有服务器呢，可供选择的服务器有很多，这篇教程我们就用Tomcat吧，老规矩，下面是传送门 附上无脑下载的过程的截图两张 这里以zip包为例。 我们解压到D盘的根目录，再附图两张 还需要Tomcat配置环境变量，不想自己写了，给个传送门
 先写到这了，不够再补充~~~</description>
@@ -34,10 +34,10 @@
     
     <item>
       <title>Android与JavaWeb服务器交互教程（3）-一个简单的Android项目</title>
-      <link>https://hupeng.me/post/android-javaweb3/</link>
+      <link>http://hupeng.me/post/android-javaweb3/</link>
       <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://hupeng.me/post/android-javaweb3/</guid>
+      <guid>http://hupeng.me/post/android-javaweb3/</guid>
       <description>1.前言 是时候该写Android端了。。。
 2.创建项目 3.导入xUtils3框架 送上xUtil3框架的传送门 附上jar包的下载地址： 百度云 七牛云 以及json的下载地址 七牛云 百度云 把jar包拷入libs 添加引用 4.编写代码 4.1 添加权限 xUtil3框架需要添加权限才能正常使用 需要添加一下权限：
 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot; /&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot; /&amp;gt;  4.2 添加基础类 在 src/main/jaba/com.imudges.app.androidclient 下添加一个BaseActivity 代码如下：
@@ -47,10 +47,10 @@ package com.imudges.app.androidclient; import android.os.Bundle; import android.
     
     <item>
       <title>Python3 上传Python包到PyPi</title>
-      <link>https://hupeng.me/post/android-javaweb2/</link>
+      <link>http://hupeng.me/post/android-javaweb2/</link>
       <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://hupeng.me/post/android-javaweb2/</guid>
+      <guid>http://hupeng.me/post/android-javaweb2/</guid>
       <description>1.前言 为了通用性，此处JavaWeb服务器采用Struts2框架开发，（最近发现一个JavaWeb的敏捷开发框架-Nutz,最近开发的JavaWeb项目几乎都是采用了这个框架写）。
 2.搭建项目 2.1 新建一个JavaWeb项目 新建一个JavaWeb项目，名字叫WebServer（这个名字随便起） File-&amp;gt;New-&amp;gt;Project 2.2 导入项目的依赖 下载struts2的库,传送门 写这篇教程的时候版本还是2.5.10.1,因此就以此为例了 在Web/WEB-INF目录下新建一个lib目录，将Struts2库文件拷贝到里面。 配置依赖 添加Tomcat运行时库 选中tomcat安装目录中的lib文件夹 以同样的方式选中项目目录中刚刚创建的lib目录。 2.3 配置Struts2项目 2.3.1.在web.xml里面配置过滤器（文件位于web/WEB-INF/web.xml），没有的话就新建一个。此处我们就拦截 action 为结尾的请求，如果要拦截所有请求，将 &amp;lt;url-pattern&amp;gt;*.action&amp;lt;/url-pattern&amp;gt;  修改成
 &amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt;  就可以。
@@ -60,10 +60,10 @@ package com.imudges.web.action; import com.opensymphony.xwork2.ActionSupport; im
     
     <item>
       <title>Python3 上传Python包到PyPi</title>
-      <link>https://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/</link>
+      <link>http://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/</link>
       <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/</guid>
+      <guid>http://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/</guid>
       <description>请确保已经注册完成账pypi号
 1.首先，先安装工具twine 在cmd输入：pip install twine 2.在Python的包目录下创建setup.py文件 例如：
 from setuptools import setup setup( name=&#39;cos_lib3&#39;, version=&#39;0.0.5&#39;, description=&#39;an unofficial sdk for qcloud cos&#39;, author=&#39;hupeng&#39;, author_email=&#39;hupeng@imudges.com&#39;, url=&#39;https://github.com/imu-hupeng/cos-python3-sdk&#39;, packages=[&#39;cos_lib3&#39;], include_package_data=True, install_requires=[&#39;requests&amp;gt;=2.0&#39;,&#39;httplib2&amp;gt;=0.9&#39;], license=&#39;MIT License&#39;, zip_safe=False, )  按照上面给出的样例填写自己的参数就可以了。
@@ -74,10 +74,10 @@ python setup.py sdist  此时会在当前目录下创建一个sdist目录，里�
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/</link>
+      <link>http://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/</link>
       <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/</guid>
+      <guid>http://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/</guid>
       <description>cos-python3-sdk 腾讯云对象存储服务（cos）Python3.5版本SDK *此版本非官方版本 项目进展：部分开发完成 项目地址：https://github.com/imu-hupeng/cos-python3-sdk SDK用法简介 1.安装(下面两种方式任选其一即可) 1.1 推荐使用pip安装，命令： pip install cos-lib3 1.2 下载源码，使用setup.py安装 2.bucket操作 2.1 得到一个bucket 调用格式：
 from cos_lib3.cos import Cos cos = Cos(app_id=&amp;lt;appid&amp;gt;, secret_id=&#39;&amp;lt;secret_id&amp;gt;&#39;, secket_key=&#39;&amp;lt;secket_key&amp;gt;&#39;, region=&#39;&amp;lt;地域：sh（华东），gz（华南），tj（华北）&amp;gt;&#39;) bucket = cos.get_bucket(&amp;quot;&amp;lt;bucket名称&amp;gt;&amp;quot;)  样例调用：
 from cos_lib3.cos import Cos cos = Cos(app_id=123456789, secret_id=&#39;AKIDpTgPyrRUh6cS77PTGVtHZKklTBCurQq2&#39;, secket_key=&#39;2o5eXbkgNxJ2jWnZ67z1vlIVDxfAQ&#39;, region=&#39;tj&#39;) bucket = cos.get_bucket(&amp;quot;test&amp;quot;)  3.目录操作 3.1 创建目录 格式如下：

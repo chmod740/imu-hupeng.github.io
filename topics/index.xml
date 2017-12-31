@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Topics on hupeng&#39;s personal page</title>
-    <link>https://hupeng.me/topics/</link>
+    <link>http://hupeng.me/topics/</link>
     <description>Recent content in Topics on hupeng&#39;s personal page</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
     
-	<atom:link href="https://hupeng.me/topics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://hupeng.me/topics/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

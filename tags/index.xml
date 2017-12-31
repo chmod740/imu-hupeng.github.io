@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on hupeng&#39;s personal page</title>
-    <link>https://hupeng.me/tags/</link>
+    <link>http://hupeng.me/tags/</link>
     <description>Recent content in Tags on hupeng&#39;s personal page</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
     <lastBuildDate>Sun, 12 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://hupeng.me/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://hupeng.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python3</title>
-      <link>https://hupeng.me/tags/python3/</link>
+      <link>http://hupeng.me/tags/python3/</link>
       <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://hupeng.me/tags/python3/</guid>
+      <guid>http://hupeng.me/tags/python3/</guid>
       <description></description>
     </item>
     
