@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.31.1" />
+
+  <title>Android与JavaWeb服务器交互教程（3）-一个简单的Android项目 &middot; hupeng&#39;s personal page</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://hupeng.me/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://hupeng.me/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/post/"><i class='fa fa-list fa-fw'></i>Post</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/hupengpengpeng" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/peng.hu.5832343" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/5867937555" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/imu-hupeng" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016-2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Android与JavaWeb服务器交互教程（3）-一个简单的Android项目</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Apr 2017, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<h1 id="1-前言">1.前言</h1>
+
+<p>是时候该写Android端了。。。</p>
+
+<h1 id="2-创建项目">2.创建项目</h1>
+
+<p><img src="https://image.webprague.com/blog_img_1493542650193" alt="" />
+<img src="https://image.webprague.com/blog_img_1493542818525" alt="![](https://image.webprague.com/blog_img_1493547800212)![](https://image.webprague.com/blog_img_1493547758087)" />
+<img src="https://image.webprague.com/blog_img_1493542828471" alt="" />
+<img src="https://image.webprague.com/blog_img_1493542837928" alt="" /></p>
+
+<h1 id="3-导入xutils3框架">3.导入xUtils3框架</h1>
+
+<p>送上xUtil3框架的<a href="https://github.com/wyouflf/xUtils3">传送门</a>
+附上jar包的下载地址：
+<a href="http://pan.baidu.com/s/1hrQ6TP6">百度云</a>
+<a href="http://oekmywyju.bkt.clouddn.com/xutils-3.5.0.jar">七牛云</a>
+以及json的下载地址
+<a href="http://oekmywyju.bkt.clouddn.com/gson-2.8.0.jar">七牛云</a>
+<a href="http://pan.baidu.com/s/1qYweDGg">百度云</a>
+把jar包拷入libs
+<img src="https://image.webprague.com/blog_img_1493547580431" alt="" />
+添加引用
+<img src="https://image.webprague.com/blog_img_1493547748226" alt="" />
+<img src="https://image.webprague.com/blog_img_1493547789788" alt="" />
+<img src="https://image.webprague.com/blog_img_1493547808888" alt="" />
+<img src="https://image.webprague.com/blog_img_1493548562571" alt="" /></p>
+
+<h1 id="4-编写代码">4.编写代码</h1>
+
+<h3 id="4-1-添加权限">4.1 添加权限</h3>
+
+<p>xUtil3框架需要添加权限才能正常使用
+需要添加一下权限：</p>
+
+<pre><code class="language-xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+
+</code></pre>
+
+<p><img src="https://image.webprague.com/blog_img_1493547997659" alt="" /></p>
+
+<h3 id="4-2-添加基础类">4.2 添加基础类</h3>
+
+<p>在 src/main/jaba/com.imudges.app.androidclient 下添加一个BaseActivity
+代码如下：</p>
+
+<pre><code class="language-java">package com.imudges.app.androidclient;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import org.xutils.x;
+
+/**
+ * Created by HUPENG on 2017/4/30.
+ */
+public class BaseActivity extends AppCompatActivity{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        x.view().inject(this);
+    }
+}
+</code></pre>
+
+<h3 id="4-3-修改登录界面资源文件">4.3 修改登录界面资源文件</h3>
+
+<p>activity_login.xml 文件位于app/src/main/res/layout/app/src/main/res/layout/
+修改之后：</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+              android:orientation=&quot;vertical&quot;
+              android:layout_width=&quot;match_parent&quot;
+              android:layout_height=&quot;match_parent&quot;
+              android:weightSum=&quot;1&quot;
+              android:gravity=&quot;center&quot;&gt;
+    &lt;LinearLayout
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:orientation=&quot;horizontal&quot;&gt;
+        &lt;TextView
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_gravity=&quot;center_vertical&quot;
+        /&gt;
+        &lt;EditText
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:id=&quot;@+id/et_username&quot;
+                android:hint=&quot;用户名&quot;
+                android:imeOptions=&quot;actionDone&quot;
+                android:text=&quot;&quot;
+        /&gt;
+    &lt;/LinearLayout&gt;
+    &lt;LinearLayout
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:orientation=&quot;horizontal&quot;
+            android:paddingBottom=&quot;10dp&quot;&gt;
+        &lt;TextView
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_gravity=&quot;center_vertical&quot;
+        /&gt;
+        &lt;EditText
+                android:id=&quot;@+id/et_password&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:hint=&quot;密码&quot;
+                android:inputType=&quot;textPassword&quot;
+                android:imeOptions=&quot;actionDone&quot;
+                android:text=&quot;&quot;
+        /&gt;
+    &lt;/LinearLayout&gt;
+    &lt;Button
+            android:id=&quot;@+id/btn_login&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;登录&quot;
+            android:layout_weight=&quot;0.01&quot;
+            android:textColor=&quot;#ffffff&quot;
+            android:textSize=&quot;17dp&quot;
+    /&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<h3 id="4-4-完成登录界面逻辑">4.4 完成登录界面逻辑</h3>
+
+<p>注意，服务器的地址要改成你自己的服务器的地址</p>
+
+<pre><code class="language-java">package com.imudges.app.androidclient;
+
+
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+import android.widget.Toast;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
+
+@ContentView(R.layout.activity_login)
+public class LoginActivity extends BaseActivity {
+    @ViewInject(R.id.et_username)
+    private EditText etUsername;
+    @ViewInject(R.id.et_password)
+    private EditText etPassword;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Event(value = R.id.btn_login,type = View.OnClickListener.class)
+    private void onLoginBtnClick(View view){
+        /**
+         * 这里填写你的服务器所在的IP地址替换我的ip地址
+         * */
+        try{
+            RequestParams params = new RequestParams(&quot;http://183.175.12.160:8899/login.action&quot;);
+            params.addQueryStringParameter(&quot;username&quot;,etUsername.getText().toString());
+            params.addQueryStringParameter(&quot;password&quot;,etPassword.getText().toString());
+            x.http().get(params, new Callback.CommonCallback&lt;String&gt;() {
+                @Override
+                public void onSuccess(String s) {
+                    JsonParser jsonParser = new JsonParser();
+                    JsonObject jsonObject = (JsonObject) jsonParser.parse(s);
+                    int code = jsonObject.get(&quot;code&quot;).getAsInt();
+                    if (code == 0){
+                        //执行登录成功操作
+                        Toast.makeText(LoginActivity.this,jsonObject.get(&quot;msg&quot;).getAsString(),Toast.LENGTH_SHORT).show();
+                    }else {
+                        //执行登录失败操作
+                        Toast.makeText(LoginActivity.this,jsonObject.get(&quot;msg&quot;).getAsString(),Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onError(Throwable throwable, boolean b) {
+
+                }
+
+                @Override
+                public void onCancelled(CancelledException e) {
+
+                }
+
+                @Override
+                public void onFinished() {
+
+                }
+            });
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+}
+
+</code></pre>
+
+<h3 id="4-5-在包下新建myapplication">4.5 在包下新建MyApplication</h3>
+
+<pre><code class="language-java">package com.imudges.app.androidclient;
+
+import android.app.Application;
+import org.xutils.x;
+
+/**
+ * Created by HUPENG on 2017/4/30.
+ */
+/**
+ * Created by yangyang on 2017/4/24.
+ */
+public class MyApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        x.Ext.init(this);//Xutils初始化
+        x.Ext.setDebug(BuildConfig.DEBUG); // 是否输出debug日志, 开启debug会影响性能.
+    }
+}
+</code></pre>
+
+<h3 id="在清单文件中配置application">在清单文件中配置Application</h3>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+          package=&quot;com.imudges.app.androidclient&quot;&gt;
+
+    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+    &lt;application
+            android:allowBackup=&quot;true&quot;
+            android:icon=&quot;@mipmap/ic_launcher&quot;
+            android:label=&quot;@string/app_name&quot;
+            android:supportsRtl=&quot;true&quot;
+            android:theme=&quot;@style/AppTheme&quot;
+            android:name=&quot;.MyApplication&quot;&gt;
+        &lt;activity android:name=&quot;.LoginActivity&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot;/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+
+<p><img src="https://image.webprague.com/blog_img_1493554213322" alt="" />
+下面就可以跑了~~~
+<img src="https://image.webprague.com/blog_img_1493554761072" alt="" />
+最后附上项目源码：
+<a href="http://oekmywyju.bkt.clouddn.com/AndroidClient.zip">七牛云</a>
+<a href="http://pan.baidu.com/s/1c2cksM0">百度云</a></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://hupeng.me/post/android-javaweb2/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://hupeng.me/post/android-javaweb2/">Python3 上传Python包到PyPi</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://hupeng.me/post/android-javaweb1/">Android与JavaWeb服务器交互教程（1）-搭建环境</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://hupeng.me/post/android-javaweb1/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://hupeng.me/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

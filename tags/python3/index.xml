@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python3 on hupeng&#39;s personal page</title>
+    <link>https://hupeng.me/tags/python3/</link>
+    <description>Recent content in Python3 on hupeng&#39;s personal page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 12 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hupeng.me/tags/python3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/</link>
+      <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/</guid>
+      <description>cos-python3-sdk 腾讯云对象存储服务（cos）Python3.5版本SDK *此版本非官方版本 项目进展：部分开发完成 项目地址：https://github.com/imu-hupeng/cos-python3-sdk SDK用法简介 1.安装(下面两种方式任选其一即可) 1.1 推荐使用pip安装，命令： pip install cos-lib3 1.2 下载源码，使用setup.py安装 2.bucket操作 2.1 得到一个bucket 调用格式：
+from cos_lib3.cos import Cos cos = Cos(app_id=&amp;lt;appid&amp;gt;, secret_id=&#39;&amp;lt;secret_id&amp;gt;&#39;, secket_key=&#39;&amp;lt;secket_key&amp;gt;&#39;, region=&#39;&amp;lt;地域：sh（华东），gz（华南），tj（华北）&amp;gt;&#39;) bucket = cos.get_bucket(&amp;quot;&amp;lt;bucket名称&amp;gt;&amp;quot;)  样例调用：
+from cos_lib3.cos import Cos cos = Cos(app_id=123456789, secret_id=&#39;AKIDpTgPyrRUh6cS77PTGVtHZKklTBCurQq2&#39;, secket_key=&#39;2o5eXbkgNxJ2jWnZ67z1vlIVDxfAQ&#39;, region=&#39;tj&#39;) bucket = cos.get_bucket(&amp;quot;test&amp;quot;)  3.目录操作 3.1 创建目录 格式如下：
+bucket.create_folder(&#39;&amp;lt;目录名称&amp;gt;&#39;)  3.2 查询目录属性 格式如下：
+bucket.query_folder(&#39;&amp;lt;目录名称&amp;gt;&#39;)  3.3 列出目录 调用格式1：
+rst = bucket.list_folder(dir_name=&#39;&amp;lt;目录名称&amp;gt;&#39;) print(rst)  调用格式2（查询某个目录下特定的特定前缀的文件）：
+rst = bucket.</description>
+    </item>
+    
+  </channel>
+</rss>

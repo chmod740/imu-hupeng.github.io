@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.31.1" />
+
+  <title>Getting Started with Hugo &middot; hupeng&#39;s personal page</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://hupeng.me/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://hupeng.me/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/post/"><i class='fa fa-list fa-fw'></i>Post</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/hupengpengpeng" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/peng.hu.5832343" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/5867937555" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/imu-hupeng" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016-2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Getting Started with Hugo</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>12 Feb 2017, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://hupeng.me/tags/python3">python3</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h1 id="cos-python3-sdk">cos-python3-sdk</h1>
+
+<h1 id="腾讯云对象存储服务-cos-python3-5版本sdk">腾讯云对象存储服务（cos）Python3.5版本SDK</h1>
+
+<h3 id="此版本非官方版本">*此版本非官方版本</h3>
+
+<h5 id="项目进展-部分开发完成">项目进展：部分开发完成</h5>
+
+<h5 id="项目地址-https-github-com-imu-hupeng-cos-python3-sdk">项目地址：<a href="https://github.com/imu-hupeng/cos-python3-sdk">https://github.com/imu-hupeng/cos-python3-sdk</a></h5>
+
+<h2 id="sdk用法简介">SDK用法简介</h2>
+
+<h3 id="1-安装-下面两种方式任选其一即可">1.安装(下面两种方式任选其一即可)</h3>
+
+<h4 id="1-1-推荐使用pip安装-命令-pip-install-cos-lib3">1.1 推荐使用pip安装，命令： pip install cos-lib3</h4>
+
+<h4 id="1-2-下载源码-使用setup-py安装">1.2 下载源码，使用setup.py安装</h4>
+
+<h3 id="2-bucket操作">2.bucket操作</h3>
+
+<h4 id="2-1-得到一个bucket">2.1 得到一个bucket</h4>
+
+<p>调用格式：</p>
+
+<pre><code class="language-python">from cos_lib3.cos import Cos
+
+cos = Cos(app_id=&lt;appid&gt;, secret_id='&lt;secret_id&gt;', secket_key='&lt;secket_key&gt;', region='&lt;地域：sh（华东），gz（华南），tj（华北）&gt;')
+bucket = cos.get_bucket(&quot;&lt;bucket名称&gt;&quot;)
+</code></pre>
+
+<p>样例调用：</p>
+
+<pre><code class="language-python">from cos_lib3.cos import Cos
+cos = Cos(app_id=123456789, secret_id='AKIDpTgPyrRUh6cS77PTGVtHZKklTBCurQq2', secket_key='2o5eXbkgNxJ2jWnZ67z1vlIVDxfAQ', region='tj')
+bucket = cos.get_bucket(&quot;test&quot;)
+</code></pre>
+
+<h3 id="3-目录操作">3.目录操作</h3>
+
+<h4 id="3-1-创建目录">3.1 创建目录</h4>
+
+<p>格式如下：</p>
+
+<pre><code class="language-python">bucket.create_folder('&lt;目录名称&gt;')
+</code></pre>
+
+<h4 id="3-2-查询目录属性">3.2 查询目录属性</h4>
+
+<p>格式如下：</p>
+
+<pre><code class="language-python">bucket.query_folder('&lt;目录名称&gt;')
+</code></pre>
+
+<h4 id="3-3-列出目录">3.3 列出目录</h4>
+
+<p>调用格式1：</p>
+
+<pre><code class="language-python">rst = bucket.list_folder(dir_name='&lt;目录名称&gt;')
+print(rst)
+</code></pre>
+
+<p>调用格式2（查询某个目录下特定的特定前缀的文件）：</p>
+
+<pre><code class="language-python">rst = bucket.list_folder(dir_name='&lt;目录名称&gt;', prefix='&lt;前缀&gt;')
+print(rst)
+</code></pre>
+
+<p>调用格式3（查询某个目录下的文件，并限定查询数量）：</p>
+
+<pre><code class="language-python">rst = bucket.list_folder(dir_name='&lt;目录名称&gt;',  num=&lt;查询的数量&gt;)
+print(rst)
+</code></pre>
+
+<p>调用格式4（综合格式2，3）</p>
+
+<pre><code class="language-python">rst = bucket.list_folder(dir_name='&lt;目录名称&gt;', prefix='&lt;前缀&gt;',  num=&lt;查询数量&gt;)
+</code></pre>
+
+<h4 id="3-4-删除目录">3.4 删除目录</h4>
+
+<p>调用格式</p>
+
+<pre><code class="language-python">rst = bucket.delete_folder('&lt;目录名称&gt;')
+print(rst)
+</code></pre>
+
+<h3 id="4-文件操作">4 文件操作</h3>
+
+<h4 id="4-1-简单文件上传-适合上传的文件的大小小于20mb">4.1 简单文件上传（适合上传的文件的大小小于20MB）</h4>
+
+<p>调用格式1（文件上传到bucket的根目录）：</p>
+
+<pre><code class="language-python">bucket.upload_file(real_file_path='&lt;文件的在本地的路径&gt;', file_name='&lt;文件在bucket的名称&gt;')
+</code></pre>
+
+<p>调用格式2（文件上传到bucket的特定的目录）</p>
+
+<pre><code class="language-python">bucket.upload_file(real_file_path='&lt;文件的在本地的路径&gt;', file_name='&lt;文件在bucket的名称&gt;', dir_name='&lt;目录名称&gt;')
+</code></pre>
+
+<h4 id="4-2-文件分片上传">4.2 文件分片上传</h4>
+
+<p>暂未实现</p>
+
+<h4 id="4-3-文件移动">4.3 文件移动</h4>
+
+<p>调用格式</p>
+
+<pre><code class="language-python">bucket.move_file(source_fileid='&lt;源文件的路径&gt;', dest_fileid='目标文件的路径')
+</code></pre>
+
+<h4 id="4-4-文件复制">4.4 文件复制</h4>
+
+<p>调用格式</p>
+
+<pre><code class="language-python">bucket.copy_file(source_fileid='&lt;源文件路径&gt;', dest_fileid='目标文件路径')
+</code></pre>
+
+<h4 id="4-5-文件删除">4.5 文件删除</h4>
+
+<p>调用格式</p>
+
+<pre><code class="language-python">bucket.delete_file('&lt;文件的绝对路径&gt;')
+</code></pre>
+
+<h4 id="4-6-通过url上传文件">4.6 通过url上传文件</h4>
+
+<p>调用格式如下:</p>
+
+<pre><code class="language-python">bucket.upload_file_from_url(&quot;http://sucai.qqjay.com/qqjayxiaowo/201210/26/1.jpg&quot;, file_name=&quot;777.jpg&quot;, dir_name=None)
+</code></pre>
+
+<p>第一个参数为文件的url地址,<br>
+第二个参数为放在云存储上的显示的文件的文件名,<br>
+第三个参数为文件在云存储上的文件目录,可以为None,此时放在根目录上</p>
+
+<h3 id="5-附录">5.附录</h3>
+
+<h4 id="5-1-上传文件后我该怎么获取用于访问的链接">5.1 上传文件后我该怎么获取用于访问的链接?</h4>
+
+<p>首先获取上传之后的返回值 如:data = bucket.upload_file(real_file_path=&rsquo;&lt;文件的在本地的路径&gt;&lsquo;, file_name=&rsquo;&lt;文件在bucket的名称&gt;&lsquo;) <br>
+得到的data 的值形如:<br>
+{&lsquo;source_url&rsquo;: &lsquo;<a href="http://test-125255866665.costj.myqcloud.com/777.jpg'">http://test-125255866665.costj.myqcloud.com/777.jpg'</a>, &lsquo;access_url&rsquo;: &lsquo;<a href="http://test-125255866665.file.myqcloud.com/777.jpg'">http://test-125255866665.file.myqcloud.com/777.jpg'</a>, &lsquo;url&rsquo;: &lsquo;<a href="http://tj.file.myqcloud.com/files/v2/125255866665/test/777.jpg'">http://tj.file.myqcloud.com/files/v2/125255866665/test/777.jpg'</a>, &lsquo;vid&rsquo;: &lsquo;8fea559ee6578acf89698bef7ae5b6551494676054&rsquo;, &lsquo;resource_path&rsquo;: &lsquo;/125255866665/test/777.jpg&rsquo;}<br>
+下面我们来解析这个data字符串,得到access_url字段的值并输出:</p>
+
+<pre><code class="language-python">access_url = eval(data).get(&quot;access_url&quot;)
+print(access_url)
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/">Python3 上传Python包到PyPi</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://hupeng.me/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.31.1" />
+
+  <title>Python3 上传Python包到PyPi &middot; hupeng&#39;s personal page</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://hupeng.me/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://hupeng.me/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/post/"><i class='fa fa-list fa-fw'></i>Post</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/hupengpengpeng" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/peng.hu.5832343" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/5867937555" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/imu-hupeng" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016-2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Python3 上传Python包到PyPi</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Apr 2017, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<h1 id="1-前言">1.前言</h1>
+
+<p>为了通用性，此处JavaWeb服务器采用Struts2框架开发，（最近发现一个JavaWeb的敏捷开发框架-<a href="http://www.nutzam.com/">Nutz</a>,最近开发的JavaWeb项目几乎都是采用了这个框架写）。</p>
+
+<h1 id="2-搭建项目">2.搭建项目</h1>
+
+<h3 id="2-1-新建一个javaweb项目">2.1 新建一个JavaWeb项目</h3>
+
+<p>新建一个JavaWeb项目，名字叫WebServer（这个名字随便起）
+File-&gt;New-&gt;Project
+<img src="https://image.webprague.com/blog_img_1493528024216" alt="" />
+<img src="https://image.webprague.com/blog_img_1493529203845" alt="" /></p>
+
+<h3 id="2-2-导入项目的依赖">2.2 导入项目的依赖</h3>
+
+<p>下载struts2的库,<a href="http://struts.apache.org">传送门</a>
+写这篇教程的时候版本还是2.5.10.1,因此就以此为例了
+<img src="https://image.webprague.com/blog_img_1493532283844" alt="" />
+在Web/WEB-INF目录下新建一个lib目录，将Struts2库文件拷贝到里面。
+<img src="https://image.webprague.com/blog_img_1493532142120" alt="" /></p>
+
+<p>配置依赖
+<img src="https://image.webprague.com/blog_img_1493528942904" alt="" />
+<img src="https://image.webprague.com/blog_img_1493529261506" alt="" /></p>
+
+<p>添加Tomcat运行时库
+<img src="https://image.webprague.com/blog_img_1493529388503" alt="" />
+选中tomcat安装目录中的lib文件夹
+<img src="https://image.webprague.com/blog_img_1493529482938" alt="" />
+以同样的方式选中项目目录中刚刚创建的lib目录。
+<img src="https://image.webprague.com/blog_img_1493529591251" alt="" /></p>
+
+<h3 id="2-3-配置struts2项目">2.3 配置Struts2项目</h3>
+
+<h4 id="2-3-1-在web-xml里面配置过滤器-文件位于web-web-inf-web-xml-没有的话就新建一个-此处我们就拦截-action-为结尾的请求-如果要拦截所有请求-将">2.3.1.在web.xml里面配置过滤器（文件位于web/WEB-INF/web.xml），没有的话就新建一个。此处我们就拦截 action 为结尾的请求，如果要拦截所有请求，将</h4>
+
+<pre><code class="language-xml">&lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
+</code></pre>
+
+<p>修改成</p>
+
+<pre><code class="language-xml">&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+</code></pre>
+
+<p>就可以。</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
+         version=&quot;3.1&quot;&gt;
+
+    &lt;filter&gt;
+        &lt;filter-name&gt;action2&lt;/filter-name&gt;
+        &lt;filter-class&gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt;
+    &lt;/filter&gt;
+
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;action2&lt;/filter-name&gt;
+        &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+&lt;/web-app&gt;
+</code></pre>
+
+<h4 id="2-3-2-添加action类">2.3.2 添加Action类</h4>
+
+<p>在src目录下新建一个包，此处我们就命名为com.imudges.web.action
+创建一个BaseAction类,代码如下：</p>
+
+<pre><code class="language-java">package com.imudges.web.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by HUPENG on 2017/4/30.
+ */
+public class BaseAction extends ActionSupport{
+    /**
+     * 返回成功的结果
+     * */
+    protected Map&lt;String,Object&gt; getSuccessResult(Object data){
+        Map&lt;String,Object&gt;result = new HashMap&lt;&gt;();
+        result.put(&quot;code&quot;,0);
+        result.put(&quot;msg&quot;,&quot;ok&quot;);
+        result.put(&quot;data&quot;,data);
+        return result;
+    }
+    /**
+     * 返回失败的结果
+     * */
+    protected Map&lt;String,Object&gt;getFailResult(int code,String msg){
+        Map&lt;String,Object&gt;result = new HashMap&lt;&gt;();
+        result.put(&quot;code&quot;,code);
+        result.put(&quot;msg&quot;,msg);
+        result.put(&quot;data&quot;,null);
+        return result;
+    }
+}
+
+
+</code></pre>
+
+<p>新建一个处理登录请求的Action类继承自BaseAction，此处为了简单起见，不引入数据库层，直接在Action层中进行判断用户名，当用户名为admin，密码为123的时候认为登录成功，否则认为登录失败。具体的实现如下：</p>
+
+<pre><code class="language-java">package com.imudges.web.action;
+
+import java.util.Map;
+
+/**
+ * Created by HUPENG on 2017/4/30.
+ */
+public class LoginAction extends BaseAction {
+    /**
+     * 用户请求参数
+     * */
+    private String username;
+    private String password;
+
+    /**
+     * 返回结果
+     * */
+    private Map&lt;String,Object&gt;result;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Map&lt;String, Object&gt; getResult() {
+        return result;
+    }
+
+    public void setResult(Map&lt;String, Object&gt; result) {
+        this.result = result;
+    }
+
+    @Override
+    public String execute() throws Exception {
+        if (&quot;admin&quot;.equals(username) &amp;&amp; &quot;123&quot;.equals(password)){
+            result = getSuccessResult(null);
+        }else {
+            result = getFailResult(-1,&quot;用户名或者密码错误&quot;);
+        }
+        return SUCCESS;
+    }
+
+}
+</code></pre>
+
+<h4 id="2-3-3-编写struts-xml">2.3.3 编写struts.xml</h4>
+
+<p>struts.xml位于src的根目录，若无，新建之。
+<img src="https://image.webprague.com/blog_img_1493533155713" alt="" /></p>
+
+<p>修改之后应该类似于这样：</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;!DOCTYPE struts PUBLIC
+        &quot;-//Apache Software Foundation//DTD Struts Configuration 2.0//EN&quot;
+        &quot;http://struts.apache.org/dtds/struts-2.0.dtd&quot;&gt;
+
+&lt;struts&gt;
+
+    &lt;package name=&quot;default&quot; namespace=&quot;/&quot;
+             extends=&quot;struts-default,json-default&quot;&gt;
+        &lt;action name=&quot;login&quot; class=&quot;com.imudges.web.action.LoginAction&quot;&gt;
+            &lt;result name=&quot;success&quot; type=&quot;json&quot;&gt;
+                &lt;param name=&quot;root&quot;&gt;result&lt;/param&gt;
+            &lt;/result&gt;
+        &lt;/action&gt;
+    &lt;/package&gt;
+&lt;/struts&gt;
+</code></pre>
+
+<h3 id="2-4启动服务器">2.4启动服务器</h3>
+
+<p><img src="https://image.webprague.com/blog_img_1493533401155" alt="" />
+<img src="https://image.webprague.com/blog_img_1493533449172" alt="" />
+<img src="https://image.webprague.com/blog_img_1493533494948" alt="" />
+<img src="https://image.webprague.com/blog_img_1493533531632" alt="" />
+<img src="https://image.webprague.com/blog_img_1493533600520" alt="" /></p>
+
+<h3 id="2-5查看效果">2.5查看效果</h3>
+
+<p>登录成功
+<img src="https://image.webprague.com/blog_img_1493533709143" alt="" />
+登录失败
+<img src="https://image.webprague.com/blog_img_1493533781319" alt="" />
+最后，附上项目源码：
+<a href="http://oekmywyju.bkt.clouddn.com/WebServer.zip">七牛云</a>
+<a href="http://pan.baidu.com/s/1pKNAKB5">百度云</a></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/">Python3 上传Python包到PyPi</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://hupeng.me/post/android-javaweb3/">Android与JavaWeb服务器交互教程（3）-一个简单的Android项目</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://hupeng.me/post/android-javaweb3/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://hupeng.me/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

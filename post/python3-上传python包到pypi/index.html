@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.31.1" />
 
-  <title>Posts &middot; hupeng&#39;s personal page</title>
+  <title>Python3 上传Python包到PyPi &middot; hupeng&#39;s personal page</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="hupeng&#39;s personal page" href="https://hupeng.me/post/index.xml" />
   
 
   
@@ -102,10 +100,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://hupeng.me/post/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -217,33 +211,128 @@
 
 
 <div class="header">
-  <h1>Posts</h1>
+  <h1>Python3 上传Python包到PyPi</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  
-  <h2>2017</h2>
-  <ul>
-  
-    <li><time>18 May 2017, 00:00</time> - <a href="https://hupeng.me/post/tensorflow%E5%BA%94%E7%94%A8%E4%B9%8B%E7%AE%80%E5%8D%95%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB/">Tensorflow应用之简单验证码识别</a></li>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>02 Apr 2017, 00:00</time>
+  </div>
 
   
-    <li><time>30 Apr 2017, 00:00</time> - <a href="https://hupeng.me/post/android-javaweb2/">Python3 上传Python包到PyPi</a></li>
 
   
-    <li><time>30 Apr 2017, 00:00</time> - <a href="https://hupeng.me/post/android-javaweb3/">Android与JavaWeb服务器交互教程（3）-一个简单的Android项目</a></li>
 
   
-    <li><time>30 Apr 2017, 00:00</time> - <a href="https://hupeng.me/post/android-javaweb1/">Android与JavaWeb服务器交互教程（1）-搭建环境</a></li>
+
+</div>
 
   
-    <li><time>02 Apr 2017, 00:00</time> - <a href="https://hupeng.me/post/python3-%E4%B8%8A%E4%BC%A0python%E5%8C%85%E5%88%B0pypi/">Python3 上传Python包到PyPi</a></li>
+
+<p><strong><em>请确保已经注册完成账pypi号</em></strong></p>
+
+<h3 id="1-首先-先安装工具twine">1.首先，先安装工具twine</h3>
+
+<p>在cmd输入：pip install twine
+<img src="https://image.webprague.com/blog_img_1491138882740" alt="" /></p>
+
+<h3 id="2-在python的包目录下创建setup-py文件">2.在Python的包目录下创建setup.py文件</h3>
+
+<p>例如：</p>
+
+<pre><code class="language-python">from setuptools import setup
+
+setup(
+    name='cos_lib3',
+    version='0.0.5',
+    description='an unofficial sdk for qcloud cos',
+    author='hupeng',
+    author_email='hupeng@imudges.com',
+    url='https://github.com/imu-hupeng/cos-python3-sdk',
+    packages=['cos_lib3'],
+    include_package_data=True,
+    install_requires=['requests&gt;=2.0','httplib2&gt;=0.9'],
+    license='MIT License',
+    zip_safe=False,
+)
+</code></pre>
+
+<p>按照上面给出的样例填写自己的参数就可以了。</p>
+
+<h3 id="3-打包">3.打包</h3>
+
+<p>cmd切换到python的包目录下，即有setup.py文件的那个目录下，运行</p>
+
+<pre><code class="language-shell">python setup.py sdist
+</code></pre>
+
+<p>此时会在当前目录下创建一个sdist目录，里面会有一个 “文件名”.tar.gz的文件</p>
+
+<h3 id="4-上传">4.上传</h3>
+
+<pre><code class="language-shell"> twine upload .\dist\“文件名”.tar.gz
+</code></pre>
+
+<p>按照提示输入账号密码就行，如果没有账号密码，去pypi官方网站上注册一个即可。</p>
+
 
   
-    <li><time>12 Feb 2017, 00:00</time> - <a href="https://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/">Getting Started with Hugo</a></li>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://hupeng.me/post/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1cos-python3-sdk/">Getting Started with Hugo</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://hupeng.me/post/android-javaweb2/">Python3 上传Python包到PyPi</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://hupeng.me/post/android-javaweb2/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
 
   
-  </ul>
-  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>

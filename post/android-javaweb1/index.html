@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.31.1" />
+
+  <title>Android与JavaWeb服务器交互教程（1）-搭建环境 &middot; hupeng&#39;s personal page</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://hupeng.me/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://hupeng.me/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://hupeng.me/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/post/"><i class='fa fa-list fa-fw'></i>Post</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://hupeng.me/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/hupengpengpeng" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/peng.hu.5832343" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/5867937555" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/imu-hupeng" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016-2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Android与JavaWeb服务器交互教程（1）-搭建环境</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Apr 2017, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<h1 id="1-前言">1.前言</h1>
+
+<p>趁着五一放假，闲来无事做，寻思着写篇教程吧。
+*本系列教程只适合有一定 单机版Android开发基础的同学，大牛请忽略此教程。
+<hr>
+如果我们需要搭建一个具有服务器支撑的Android应用，我们可选的方案有很多。
+根据我的经验（当然也不一定准确。。。）对于初学者而言，我个人比较推荐使用Bmob后端云（为了避免打广告的嫌疑，就不贴出地址了，百度一下就有一大把），只要配置好它的SDK，后端的逻辑他都帮你实现的差不多了（PS:短信服务，支付服务等功能都有集成，我只不过某些服务需要收费。。。），我们只需要在Android端编写代码就OK了，通过这种方式我们就能比较轻松的完成一个有服务器支撑应用。
+上面的跟本系列教程的关系不大，就是我瞎比比而已。貌似废话有点多。
+<hr></p>
+
+<h1 id="2-开发环境相关">2.开发环境相关</h1>
+
+<p>下面的才是本系列教程的真正内容。。。默认大家都已经安装好JDK了
+2.1 采用的开发环境：Idea2017（我写这篇教程的时候最新的开发环境就是它了。。。以前一直用MyEclipse，用过Idea之后后来果断弃坑，投入Idea的怀抱，对于我们苦逼的学生狗来说，Idea可以进行学生认证，<a href="https://sales.jetbrains.com/hc/zh-cn/articles/207154369-%E5%AD%A6%E7%94%9F%E6%8E%88%E6%9D%83%E7%94%B3%E8%AF%B7%E6%96%B9%E5%BC%8F">传送门</a>）
+2.2 Android开发环境相关：你的机器上需要安装好Android SDK。。。
+什么。。。。你说没有安装过这个玩意？？？给你一个<a href="http://tools.android-studio.org/index.php/sdk">传送门</a>根据你的机器的平台选择安装的版本，windows下推荐下载zip包（个人观点，出了这篇教程我就不认这句话了）。然后后续的步骤等待你自己探索了~~~
+2.3 服务器环境 进行JavaWeb开发怎么能没有服务器呢，可供选择的服务器有很多，这篇教程我们就用Tomcat吧，老规矩，下面是<a href="http://tomcat.apache.org">传送门</a>
+附上无脑下载的过程的截图两张
+<img src="https://image.webprague.com/blog_img_1493522779409" alt="" />
+<img src="https://image.webprague.com/blog_img_1493522793167" alt="" /></p>
+
+<p>这里以zip包为例。
+我们解压到D盘的根目录，再附图两张
+<img src="https://image.webprague.com/blog_img_1493522973284" alt="" />
+<img src="https://image.webprague.com/blog_img_1493522982982" alt="" /></p>
+
+<p>还需要Tomcat配置环境变量，不想自己写了，给个<a href="http://blog.csdn.net/henulwj/article/details/8961876">传送门</a></p>
+
+<p>先写到这了，不够再补充~~~</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://hupeng.me/post/android-javaweb3/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://hupeng.me/post/android-javaweb3/">Android与JavaWeb服务器交互教程（3）-一个简单的Android项目</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://hupeng.me/post/tensorflow%E5%BA%94%E7%94%A8%E4%B9%8B%E7%AE%80%E5%8D%95%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB/">Tensorflow应用之简单验证码识别</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://hupeng.me/post/tensorflow%E5%BA%94%E7%94%A8%E4%B9%8B%E7%AE%80%E5%8D%95%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://hupeng.me/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

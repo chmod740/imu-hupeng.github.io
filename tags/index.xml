@@ -1,68 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Hupeng&#39;s personal page</title>
-    <link>https://imu-hupeng.github.io/tags/</link>
-    <description>Recent content in Tags on Hupeng&#39;s personal page</description>
+    <title>Tags on hupeng&#39;s personal page</title>
+    <link>https://hupeng.me/tags/</link>
+    <description>Recent content in Tags on hupeng&#39;s personal page</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 12 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://imu-hupeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hupeng.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Development</title>
-      <link>https://imu-hupeng.github.io/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://imu-hupeng.github.io/tags/development/</guid>
-      <description></description>
-    </item>
     
     <item>
-      <title>Go</title>
-      <link>https://imu-hupeng.github.io/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Python3</title>
+      <link>https://hupeng.me/tags/python3/</link>
+      <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://imu-hupeng.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://imu-hupeng.github.io/tags/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://imu-hupeng.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://imu-hupeng.github.io/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://imu-hupeng.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Templates</title>
-      <link>https://imu-hupeng.github.io/tags/templates/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://imu-hupeng.github.io/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Themes</title>
-      <link>https://imu-hupeng.github.io/tags/themes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://imu-hupeng.github.io/tags/themes/</guid>
+      <guid>https://hupeng.me/tags/python3/</guid>
       <description></description>
     </item>
     
